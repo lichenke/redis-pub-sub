@@ -1,0 +1,11 @@
+server:
+  port: 9091
+  servlet:
+    context-path: /MQ
+
+
+# 配置Redis
+spring:
+  redis:
+    host: 172.17.189.164
+    port: 31602
