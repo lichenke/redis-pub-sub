@@ -1,7 +1,7 @@
 server:
   port: 9090
-  servlet:
-    context-path: /MQ
+#  servlet:
+#    context-path: /MQ
 
 
 # 配置Redis
@@ -26,26 +26,24 @@ httpclient:
 
 gateway:
   kong:
-    apiUrl: http://127.0.0.1/asset
-    adminUrl: ${KONG_ADMIN_URL:http://172.17.189.166:31606}
+    apiUrl: ${KONG_API_URL:http://127.0.0.1:8000}
+    adminUrl: ${KONG_ADMIN_URL:http://127.0.0.1:8001}
+    services:
+      - name: baidu
+        #url: http://${NODE_IP:127.0.0.1}:${NODE_PORT:8080}/home/index.html
+        url: https://www.baidu.com/
+        routes:
+          - name: search
+            paths:
+              - /search
 
-kong:
-  services:
-    - name: home-index
-      url: http://${NODE_IP:127.0.0.1}:${NODE_PORT:8080}/home/index.html
-      routes:
-        - name: home-index-route
-          paths:
-            - /
-            - /index.html
-
-register:
-  home: http://172.17.189.166:32594
-  consumers:
-    - appName: h2-test
-      appDisplayName: 测试工程
-      clientId: h2
-
-    - appName: h2-test1
-      appDisplayName: 测试工程1
-      clientId: h21
+#register:
+#  home: http://172.17.189.166:32594
+#  consumers:
+#    - appName: h2-test
+#      appDisplayName: 测试工程
+#      clientId: h2
+#
+#    - appName: h2-test1
+#      appDisplayName: 测试工程1
+#      clientId: h21
