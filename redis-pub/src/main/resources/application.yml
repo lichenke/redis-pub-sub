@@ -36,7 +36,14 @@ gateway:
           - name: search
             paths:
               - /search
-
+              - /search2
+      - name: bilibili
+        url: https://www.bilibili.com
+        routes:
+          - name: video
+            paths:
+              - /video
+              - /video2
 #register:
 #  home: http://172.17.189.166:32594
 #  consumers:
