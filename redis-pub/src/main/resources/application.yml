@@ -18,39 +18,36 @@ example:
 
 
 
-httpclient:
-  retry-times: 11
-  base-url: 127.0.0.1
-  enabled: false
-
-
-gateway:
-  kong:
-    apiUrl: ${KONG_API_URL:http://127.0.0.1:8000}
-    adminUrl: ${KONG_ADMIN_URL:http://127.0.0.1:8001}
-    services:
-      - name: baidu
-        #url: http://${NODE_IP:127.0.0.1}:${NODE_PORT:8080}/home/index.html
-        url: https://www.baidu.com/
-        routes:
-          - name: search
-            paths:
-              - /search
-              - /search2
-      - name: bilibili
-        url: https://www.bilibili.com
-        routes:
-          - name: video
-            paths:
-              - /video
-              - /video2
-#register:
-#  home: http://172.17.189.166:32594
-#  consumers:
-#    - appName: h2-test
-#      appDisplayName: 测试工程
-#      clientId: h2
+#httpclient:
+#  retry-times: 11
+#  base-url: 127.0.0.1
+#  enabled: false
 #
-#    - appName: h2-test1
-#      appDisplayName: 测试工程1
-#      clientId: h21
+#
+#gateway:
+#  kong:
+#    apiUrl: ${KONG_API_URL:http://127.0.0.1:8000}
+#    adminUrl: ${KONG_ADMIN_URL:http://127.0.0.1:8001}
+#    services:
+#      - name: baidu
+#        #url: http://${NODE_IP:127.0.0.1}:${NODE_PORT:8080}/home/index.html
+#        url: https://www.baidu.com/
+#        routes:
+#          - name: search
+#            paths:
+#              - /search
+#              - /search2
+#      - name: bilibili
+#        url: https://www.bilibili.com
+#        routes:
+#          - name: video
+#            paths:
+#              - /video
+#              - /video2
+#
+#register:
+#  home: http://172.17.189.166:32607
+#  consumers:
+#    - appName: home
+#      appDisplayName: hoime
+#      clientId: home

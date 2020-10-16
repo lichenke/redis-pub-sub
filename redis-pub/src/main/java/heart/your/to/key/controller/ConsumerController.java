@@ -20,6 +20,6 @@ public class ConsumerController {
 
     @PostMapping("/register")
     public void register(@RequestBody Consumer consumer) {
-        service.register(consumer);
+        service.register2(consumer);
     }
 }

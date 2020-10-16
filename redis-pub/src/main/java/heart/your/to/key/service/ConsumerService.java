@@ -23,6 +23,7 @@ public class ConsumerService {
     public void register(Consumer consumer) {
         ConsumerReq req = new ConsumerReq.Builder().custom_id(consumer.getCustomId())
                                                    .username(consumer.getUsername())
+                                                   .tags(consumer.getTags())
                                                    .build();
         try {
             ConsumerResp create = kongTemplate.createConsumer(req);
@@ -33,6 +34,18 @@ public class ConsumerService {
                     return;
                 }
             }
+            log.info("Consumer {} successfully created", consumer.getUsername());
+        } catch (Throwable e) {
+            log.error(e.getMessage());
+        }
+    }
+
+    public void register2(Consumer consumer) {
+        ConsumerReq req = new ConsumerReq.Builder().custom_id(consumer.getCustomId())
+                .username(consumer.getUsername())
+                .build();
+        try {
+            ConsumerResp create = kongTemplate.updateOrCreateConsumer(consumer.getUsername(), req);
             log.info("Consumer {} successfully created", consumer.getUsername());
         } catch (Throwable e) {
             log.error(e.getMessage());
