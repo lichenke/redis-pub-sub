@@ -24,30 +24,48 @@ example:
 #  enabled: false
 #
 #
-#gateway:
-#  kong:
-#    apiUrl: ${KONG_API_URL:http://127.0.0.1:8000}
-#    adminUrl: ${KONG_ADMIN_URL:http://127.0.0.1:8001}
-#    services:
-#      - name: baidu
-#        #url: http://${NODE_IP:127.0.0.1}:${NODE_PORT:8080}/home/index.html
-#        url: https://www.baidu.com/
-#        routes:
-#          - name: search
-#            paths:
-#              - /search
-#              - /search2
-#      - name: bilibili
-#        url: https://www.bilibili.com
-#        routes:
-#          - name: video
-#            paths:
-#              - /video
-#              - /video2
-#
+
+#url: http://${NODE_IP:127.0.0.1}:${NODE_PORT:8080}/home/index.html
+gateway:
+  kong:
+    apiUrl: ${KONG_API_URL:http://127.0.0.1:8000}
+    adminUrl: ${KONG_ADMIN_URL:http://127.0.0.1:8001}
+    services:
+      - name: baidu
+        url: https://www.baidu.com
+        routes:
+          - name: search
+            paths:
+              - /search
+
+      - name: bilibili
+        url: https://www.bilibili.com
+        routes:
+          - name: video
+            paths:
+              - /video
+          - name: fun
+            paths:
+              - /fun
+
+
 #register:
 #  home: http://172.17.189.166:32607
 #  consumers:
 #    - appName: home
 #      appDisplayName: hoime
 #      clientId: home
+
+
+
+
+
+register:
+  user:
+    username: user1
+    custom-id: 156
+    tags:
+      - tag2
+    key: keytoyourheart12
+    secret: comeandgetyourlove
+

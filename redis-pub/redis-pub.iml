@@ -27,10 +27,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="redis-common" />
     <orderEntry type="library" name="Maven: heart.your.to.key:demo-spring-boot-starter:0.0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.its:ione-util:2.0.0.22-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.its:ione-util:2.1.1.95-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.14.9" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.17.2" level="project" />
-    <orderEntry type="library" name="Maven: com.its:ione-core:2.0.0.22-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.its:ione-core:2.1.1.95-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-all:indy:2.4.12" level="project" />
     <orderEntry type="library" name="Maven: com.github.groovy-wslite:groovy-wslite:1.1.2" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.66" level="project" />
@@ -49,7 +49,7 @@
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.14" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.12" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.13" level="project" />
-    <orderEntry type="library" name="Maven: com.its:ione-kong:2.1.0.95-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.its:ione-kong:2.1.1.95-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.3.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-logging:2.3.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-to-slf4j:2.13.3" level="project" />
@@ -89,6 +89,7 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.2.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.2.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.2.8.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-configuration-processor:2.3.3.RELEASE" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.springframework.boot:spring-boot-devtools:2.3.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.3.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.3.3.RELEASE" level="project" />
