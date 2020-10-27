@@ -57,6 +57,9 @@ public class UsersConsumerConfig {
             restTemplate.getForObject(qUrl, Map.class);
         } catch (HttpClientErrorException.NotFound e) {
             exists = false;
+        } catch (Exception e) {
+            log.info("Users_Consumer注册失败! 请检查配置", e);
+            return;
         }
 
         try {
