@@ -10,15 +10,6 @@ spring:
     host: 172.17.189.164
     port: 31602
 
-
-example:
-  service:
-    suffix: 111
-    prefix: asd
-
-
-
-#url: http://${NODE_IP:127.0.0.1}:${NODE_PORT:8080}/home/index.html
 gateway:
   kong:
     apiUrl: ${KONG_API_URL:http://127.0.0.1:8000}
@@ -40,18 +31,6 @@ gateway:
           - name: fun
             paths:
               - /fun
-
-
-#register:
-#  home: http://172.17.189.166:32607
-#  consumers:
-#    - appName: home
-#      appDisplayName: hoime
-#      clientId: home
-
-
-
-
 
 register:
   user:
