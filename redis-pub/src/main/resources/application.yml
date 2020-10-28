@@ -10,34 +10,35 @@ spring:
     host: 172.17.189.164
     port: 31602
 
+
+
 gateway:
   kong:
     apiUrl: ${KONG_API_URL:http://127.0.0.1:8000}
     adminUrl: ${KONG_ADMIN_URL:http://127.0.0.1:8001}
-    services:
-      - name: baidu
-        url: https://www.baidu.com
-        routes:
-          - name: search
-            paths:
-              - /search
+#    services:
+#      - name: baidu
+#        url: https://www.baidu.com
+#        routes:
+#          - name: search
+#            paths:
+#              - /search
+#
+#      - name: bilibili
+#        url: https://www.bilibili.com
+#        routes:
+#          - name: video
+#            paths:
+#              - /video
+#          - name: fun
+#            paths:
+#              - /fun
 
-      - name: bilibili
-        url: https://www.bilibili.com
-        routes:
-          - name: video
-            paths:
-              - /video
-          - name: fun
-            paths:
-              - /fun
 
 register:
+  consumer:
+    app-name: redispubsub
+    client-id: 11baa383-07e3-425c-a60c-34fc7a68016
   user:
-    username: user1
-    custom-id: 156
-    tags:
-      - tag2
-    key: keytoyourheart12
-    secret: comeandgetyourlove
-
+    username: user
+    custom-id: 545b95a0-2103-475b-bba2-8125f12782a
