@@ -4,6 +4,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.its.ione.v3.micro.register.service.KongProperties;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Maps;
 import lombok.Data;
@@ -49,7 +50,7 @@ public class UsersConsumerConfig {
         param.put("custom_id", userConsumer.customId);
         param.put("tags", userConsumer.tags);
 
-        String cUrl = adminUrl + "/consumers";
+        String cUrl = adminUrl.concat("/consumers");
         String qUrl = cUrl.concat("/" + username);
 
         boolean exists = true;
@@ -78,18 +79,14 @@ public class UsersConsumerConfig {
 
     private void deployJWTCredential(String url) {
         String jUrl = url.concat("/jwt");
-        Map<String, String> param = Maps.newHashMapWithExpectedSize(3);
+        Map<String, String> param = Maps.newHashMapWithExpectedSize(1);
         param.put("algorithm", "HS256");
-        param.put("key", userConsumer.key);
-        param.put("secret", userConsumer.secret);
         try {
-            JSONObject jwtCredentials = restTemplate.getForObject(jUrl, JSONObject.class);
-            for (Object o : checkNotNull(jwtCredentials).getJSONArray("data")) {
-                JSONObject credential = (JSONObject) o;
-                if (credential.getString("key").equals(userConsumer.key)) {
-                    String id = credential.getString("id");
-                    restTemplate.delete(jUrl.concat("/" + id));
-                }
+            JSONObject o = restTemplate.getForObject(jUrl, JSONObject.class);
+            JSONArray credentials = checkNotNull(o).getJSONArray("data");
+            if (credentials.size() > 0) {
+                log.info("Users_Consumer的jwt凭证部署成功!");
+                return;
             }
             restTemplate.postForObject(jUrl, param, Map.class);
             log.info("Users_Consumer的jwt凭证部署成功!");
@@ -105,7 +102,5 @@ public class UsersConsumerConfig {
         private String username;
         private String customId;
         private List<String> tags;
-        private String key;
-        private String secret;
     }
 }
