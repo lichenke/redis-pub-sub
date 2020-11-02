@@ -10,6 +10,8 @@ import heart.your.to.key.util.Consumers;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -38,5 +40,11 @@ public class ConsumerController {
     public String getJwtToken(@PathVariable String appName) {
         Ci consumer = Consumers.getConsumer(appName);
         return Consumers.genJwtToken(consumer);
+    }
+
+    @PostMapping("/consumer/register")
+    public String registerConsumer(@RequestBody Consumer consumer) {
+        ConsumerUtils.registerConsumer(consumer);
+        return consumer.getUsername() + "注册成功!";
     }
 }

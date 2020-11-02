@@ -16,13 +16,13 @@ gateway:
   kong:
     apiUrl: ${KONG_API_URL:http://127.0.0.1:8000}
     adminUrl: ${KONG_ADMIN_URL:http://127.0.0.1:8001}
-#    services:
-#      - name: baidu
-#        url: https://www.baidu.com
-#        routes:
-#          - name: search
-#            paths:
-#              - /search
+    services:
+      - name: baidu
+        url: https://www.baidu.com
+        routes:
+          - name: search
+            paths:
+              - /search
 #
 #      - name: bilibili
 #        url: https://www.bilibili.com
