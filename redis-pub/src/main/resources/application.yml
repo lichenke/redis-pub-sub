@@ -17,28 +17,16 @@ gateway:
     apiUrl: ${KONG_API_URL:http://127.0.0.1:8000}
     adminUrl: ${KONG_ADMIN_URL:http://127.0.0.1:8001}
     services:
-      - name: baidu
-        url: https://www.baidu.com
+      - name: register
+        enableJWT: true
+        url: http://127.0.0.1:9090/home
         routes:
-          - name: search
+          - name: home
             paths:
-              - /search
-#
-#      - name: bilibili
-#        url: https://www.bilibili.com
-#        routes:
-#          - name: video
-#            paths:
-#              - /video
-#          - name: fun
-#            paths:
-#              - /fun
+              - /home
 
 
 register:
   consumer:
-    app-name: redispubsub
+    appName: redispubsub
     client-id: 11baa383-07e3-425c-a60c-34fc7a68016
-  user:
-    username: user
-    custom-id: 545b95a0-2103-475b-bba2-8125f12782a
