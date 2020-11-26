@@ -1,4 +1,5 @@
 server:
+  name: redispubsub
   port: 9091
   servlet:
     context-path: /MQ

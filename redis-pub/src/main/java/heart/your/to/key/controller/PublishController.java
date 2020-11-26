@@ -24,4 +24,10 @@ public class PublishController {
         publisher.publish(topic, message);
         return "Publishing message...";
     }
+
+    @GetMapping("/publishStream")
+    public String publishStreamMsg() {
+        publisher.publishStream();
+        return "succeed!";
+    }
 }
