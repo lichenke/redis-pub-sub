@@ -7,8 +7,8 @@ server:
 # 配置Redis
 spring:
   redis:
-    host: 172.17.189.164
-    port: 31602
+    host: 127.0.0.1
+    port: 6379
 
 
 

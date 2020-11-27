@@ -30,4 +30,10 @@ public class PublishController {
         publisher.publishStream();
         return "succeed!";
     }
+
+    @GetMapping("/ack")
+    public String ack() {
+        publisher.ackMsg();
+        return "succeed!";
+    }
 }
