@@ -15,11 +15,6 @@
     <name>redis-pub</name>
 
     <dependencies>
-        <dependency>
-            <groupId>heart.your.to.key</groupId>
-            <artifactId>redis-common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         <!--  测试用   -->
         <dependency>
             <groupId>com.its</groupId>

@@ -30,7 +30,7 @@ public class RedisMessagePublisher {
     public void publishStream() {
         log.info("Publishing stream message...");
         BoundStreamOperations<String, String, String>
-                operations = redisTemplate.boundStreamOps("s1");
+                operations = redisTemplate.boundStreamOps("stream1");
         for (int i = 0; i < 10; i++) {
             RecordId recordId = operations.add(Collections.singletonMap("index", String.valueOf(i)));
             System.out.printf("send message %d , message id %s\n", i, recordId);
