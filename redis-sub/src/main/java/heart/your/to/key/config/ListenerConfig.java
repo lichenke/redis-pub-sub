@@ -14,13 +14,13 @@ import org.springframework.data.redis.stream.StreamListener;
 public class ListenerConfig {
 
     @Bean
-    public StreamListener<String, MapRecord<String, String, String>> listener() {
+    public StreamListener<String, MapRecord<String, String, Object>> listener() {
         return message -> {
             log.info(message.getStream());
             log.info(message.getId().toString());
             message.getValue().forEach((k, v) -> {
                 log.info(k);
-                log.info(v);
+                log.info(v.toString());
             });
         };
     }

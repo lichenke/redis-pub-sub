@@ -27,7 +27,7 @@ public class PublishController {
 
     @GetMapping("/publishStream")
     public String publishStreamMsg() {
-        publisher.publishStream();
+        publisher.publish();
         return "succeed!";
     }
 
