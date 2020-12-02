@@ -16,12 +16,10 @@ public class ListenerConfig {
     @Bean
     public StreamListener<String, MapRecord<String, String, Object>> listener() {
         return message -> {
-            log.info(message.getStream());
-            log.info(message.getId().toString());
-            message.getValue().forEach((k, v) -> {
-                log.info(k);
-                log.info(v.toString());
-            });
+            log.info("stream: {}, id: {}, value: {}",
+                     message.getStream(),
+                     message.getId().toString(),
+                     message.getValue().toString());
         };
     }
 

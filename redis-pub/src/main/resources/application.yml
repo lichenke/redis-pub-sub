@@ -9,6 +9,10 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
+    stream:
+      key: s1
+      consumer: c1
+      group: g1
 
 
 gateway:
